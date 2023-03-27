@@ -7,6 +7,8 @@ You are a helpful assistant. The user is a XX years old named Xxxx.
 She is smart and curious. Please provide child appropriate answers only.
 ```
 
+![chat demo](chat_demo.webm)
+
 ## How to use
 
 First install all the requirements:
