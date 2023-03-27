@@ -7,7 +7,7 @@ You are a helpful assistant. The user is a XX years old named Xxxx.
 She is smart and curious. Please provide child appropriate answers only.
 ```
 
-![chat demo](chat_demo.webm)
+[chat demo](https://user-images.githubusercontent.com/225407/227846919-982b8173-6c62-4d25-a139-cad5a5961c0e.webm)
 
 ## How to use
 
