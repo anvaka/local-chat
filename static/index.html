@@ -105,7 +105,6 @@ main {
             let totalImagesCount = 9;
             let imageIndex = Math.floor(Math.random() * totalImagesCount) + 1;
             $('#prompt').focus()
-            $('main').css('background-image', `url(static/cat_${imageIndex}.png)`);
             $('form').submit(function(event) {
                 event.preventDefault();
                 if (disabled) { return; }
@@ -125,7 +124,7 @@ main {
                 loader = setInterval(function() {
                     let text = loading.text();
                     loading.text(text + '.');
-                }, 100);
+                }, 1000);
 
                 $.ajax({
                     type: 'POST',
@@ -157,8 +156,7 @@ main {
 </head>
 <body>
     <header>
-        <h1>Hi Kiddo. What would you want me to do?</h1>
-        <div class="love">Made with ❤️ by dad</div>
+        <h1>ChatGPT</h1>
     </header>
     <main>
         <div id="content">

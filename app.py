@@ -7,7 +7,7 @@ from logging.handlers import RotatingFileHandler
 
 openai.api_key = os.environ["OPENAI_KEY"]
 MODEL = "gpt-3.5-turbo"
-MAIN_PROMPT =  "You are a helpful assistant. The user is a 10 years old girl named Kitty. She is smart and curious. Please provide child appropriate answers only."
+MAIN_PROMPT =  "You are assisting a software engineer that is 36 years old."
 
 # Set up logging
 log = logging.getLogger('myapp')
