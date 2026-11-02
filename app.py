@@ -1,11 +1,11 @@
 import os
-import openai
 import json
 from flask import Flask, request, jsonify, send_file
 import logging
 from logging.handlers import RotatingFileHandler
+from openai import OpenAI
 
-openai.api_key = os.environ["OPENAI_KEY"]
+client = OpenAI(api_key=os.environ["OPENAI_KEY"])
 MODEL = "gpt-3.5-turbo"
 MAIN_PROMPT =  "You are a helpful assistant. The user is a 10 years old girl named Kitty. She is smart and curious. Please provide child appropriate answers only."
 
@@ -50,12 +50,12 @@ def suggest_command():
             messages.append({"role": "assistant", "content": h["response"]}) 
 
     log.debug(f'Answering question: {history}')
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model=MODEL,
         messages=messages,
         temperature=0.7,
     )
-    content = response.choices[0]['message']['content']
+    content = response.choices[0].message.content
     log.debug(f'Answer: {content}')
     return jsonify({'response': content})
 
